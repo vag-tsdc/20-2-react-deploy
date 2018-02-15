@@ -13,6 +13,14 @@ app.use(express.static("client/build"));
 // Add routes, both API and view
 app.use(routes);
 
+var databaseUri = 'mongodb://localhost/week20day3';
+
+if (process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI);
+} else {
+  mongoose.connect(databaseUri);
+}
+
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
