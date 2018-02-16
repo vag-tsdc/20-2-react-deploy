@@ -13,7 +13,7 @@ app.use(express.static("client/build"));
 // Add routes, both API and view
 app.use(routes);
 
-var databaseUri = 'mongodb://localhost/week20day3';
+var databaseUri = 'mongodb://localhost/reactreadinglist';
 
 if (process.env.MONGODB_URI) {
   mongoose.connect(process.env.MONGODB_URI);
